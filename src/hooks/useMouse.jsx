@@ -1,9 +1,7 @@
 import { useContext } from "react";
-import { PositionContext } from "../contexts/position.context";
-
+import { TextContext } from "../contexts/text.context";
 export const useHandleMouseDown = () => {
-  const { position, setStartPosition, setDragging } =
-    useContext(PositionContext);
+  const { position, setStartPosition, setDragging } = useContext(TextContext);
   return (e) => {
     setDragging(true);
     setStartPosition({
@@ -14,7 +12,7 @@ export const useHandleMouseDown = () => {
 };
 
 export const useHandleMouseMove = () => {
-  const { setPosition, dragging, startPositon } = useContext(PositionContext);
+  const { setPosition, dragging, startPositon } = useContext(TextContext);
   return (e) => {
     if (dragging) {
       setPosition({
@@ -26,7 +24,7 @@ export const useHandleMouseMove = () => {
 };
 
 export const useHandleMouseUp = () => {
-  const { setDragging } = useContext(PositionContext);
+  const { setDragging } = useContext(TextContext);
   return () => {
     setDragging(false);
   };

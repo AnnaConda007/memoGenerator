@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 
-export const PositionContext = createContext({
+export const TextContext = createContext({
   position: { x: 50, y: 50 },
   setPosition: () => {},
   startPositon: { x: 0, y: 0 },
@@ -9,19 +9,19 @@ export const PositionContext = createContext({
   setDragging: () => {},
   text: "",
   setText: () => {},
-  color: "black",
+  color: "#000000",
   setColor: () => {},
   fontSize: "20",
   setFontSize: () => {},
 });
 
-export const PositionProvider = ({ children }) => {
+export const TextProvider = ({ children }) => {
   const [position, setPosition] = useState({ x: 50, y: 50 });
   const [startPositon, setStartPosition] = useState({ x: 0, y: 0 });
   const [dragging, setDragging] = useState(false);
   const [text, setText] = useState("");
   const [color, setColor] = useState("#000000");
-  const [fontSize, setFontSize] = useState("");
+  const [fontSize, setFontSize] = useState("20");
 
   const value = {
     position,
@@ -38,9 +38,5 @@ export const PositionProvider = ({ children }) => {
     setFontSize,
   };
 
-  return (
-    <PositionContext.Provider value={value}>
-      {children}
-    </PositionContext.Provider>
-  );
+  return <TextContext.Provider value={value}>{children}</TextContext.Provider>;
 };

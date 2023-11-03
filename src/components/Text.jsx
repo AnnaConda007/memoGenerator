@@ -1,9 +1,8 @@
-import { useHandleMouseDown } from "./hooks/useMouse";
+import { useHandleMouseDown } from "../hooks/useMouse";
 import { useContext } from "react";
-import { PositionContext } from "./contexts/position.context";
-
+import { TextContext } from "../contexts/text.context";
 export const Text = () => {
-  const { position, text, color, fontSize } = useContext(PositionContext);
+  const { position, text, color, fontSize } = useContext(TextContext);
 
   const handleMouseDown = useHandleMouseDown();
 

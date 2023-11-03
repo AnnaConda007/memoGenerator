@@ -1,6 +1,6 @@
-import { useHandleMouseMove, useHandleMouseUp } from "./hooks/useMouse";
+import { useHandleMouseMove, useHandleMouseUp } from "../hooks/useMouse";
 import { useContext } from "react";
-import { ImageContext } from "./contexts/image.context";
+import { ImageContext } from "../contexts/image.context";
 import { Text } from "./Text";
 
 export const MemContainer = () => {
